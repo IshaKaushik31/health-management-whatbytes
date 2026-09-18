@@ -111,34 +111,3 @@ Fields: `name, specialization, email, phone_number, years_of_experience`
 | GET | `/api/mappings/<patient_id>/` | List doctors assigned to a specific patient |
 | DELETE | `/api/mappings/<id>/` | Remove a mapping by its own id |
 
-## Example Requests
-
-**Register**
-```bash
-curl -X POST http://127.0.0.1:8000/api/auth/register/ \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Jane Doe", "email": "jane@example.com", "password": "StrongPass123!"}'
-```
-
-**Login**
-```bash
-curl -X POST http://127.0.0.1:8000/api/auth/login/ \
-  -H "Content-Type: application/json" \
-  -d '{"email": "jane@example.com", "password": "StrongPass123!"}'
-```
-
-**Create a patient**
-```bash
-curl -X POST http://127.0.0.1:8000/api/patients/ \
-  -H "Authorization: Bearer <access_token>" \
-  -H "Content-Type: application/json" \
-  -d '{"name": "John Smith", "age": 40, "gender": "Male"}'
-```
-
-**Assign a doctor to a patient**
-```bash
-curl -X POST http://127.0.0.1:8000/api/mappings/ \
-  -H "Authorization: Bearer <access_token>" \
-  -H "Content-Type: application/json" \
-  -d '{"patient": 1, "doctor": 1}'
-```
